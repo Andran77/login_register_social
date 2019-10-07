@@ -1,0 +1,49 @@
+<mat-drawer-container class="container">
+    <mat-drawer mode="side" opened class="rigth-side" position="end">
+        <div class="main-content">
+            <h1 class="cw">Create a New Account</h1>
+            <h6 class="cc fw-200">It’s quick and easy.</h6>
+        </div>
+        <div class="main-content-button">
+            <button mat-button class="cw bsw-1" (click)="onRegister()">Sign up</button>
+        </div>
+    </mat-drawer>
+    <mat-drawer-content>
+        <img class="image-logo" id="ImGrow" src="assets/image/codeep_1.png" alt="Codeep.io">
+        <div class="main-content">
+            <h1>Welcome</h1>
+            <h6 class="fw-200">Have an account on use? Log In.</h6>
+        </div>
+        <form [formGroup]="signInForm" class="main-content-fields" (ngSubmit)="onSignIn()">
+            <div class="main-content-fields">
+                <mat-form-field>
+                    <input matInput placeholder="Email" formControlName="email" required>
+                    <mat-icon matSuffix></mat-icon>
+                    <mat-error *ngIf="email.invalid">{{errorText.email}}</mat-error>
+                </mat-form-field>
+            </div>
+            <div class="main-content-fields">
+                <mat-form-field>
+                    <input [type]="isTextFieldType ? 'password' : 'text'" matInput placeholder="Password" formControlName="password" (input)="valuechange($event)" required>
+                    <button mat-icon-button matSuffix (click)="changePassType()" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="isTextFieldType">
+                        <mat-icon>{{isTextFieldType ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                    <mat-error *ngIf="password.invalid">{{errorText.password}}</mat-error>
+                </mat-form-field>
+            </div>
+            <div class="main-content-button">
+                <button mat-button class="cw bc-b">Sign in</button>
+            </div>
+        </form>
+        <div class="social-content">
+            <h6 class="fw-200">Sign in with a social network</h6>
+            <mat-icon class="s-icon" svgIcon="facebook" aria-hidden="false" aria-label="Facebook" (click)="signInWithFB()"></mat-icon>
+            <mat-icon class="s-icon" svgIcon="linkedin" aria-hidden="false" aria-label="Linkedin" (click)="signInWithLinkedIN()"></mat-icon>
+            <mat-icon class="s-icon" svgIcon="google" aria-hidden="false" aria-label="Google" (click)="signInWithGoogle()"></mat-icon>
+            <mat-icon class="d-icon" svgIcon="twitter" aria-hidden="false" aria-label="Twitter" disabled></mat-icon>
+            <mat-icon class="d-icon" svgIcon="vk" aria-hidden="false" aria-label="Vk" disabled></mat-icon>
+        </div>
+    </mat-drawer-content>
+</mat-drawer-container>
+
+    

@@ -1,0 +1,25 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.cw {
+    color: whitesmoke;
+}
+.cc {
+    color: bisque;
+}
+.fw-200 {
+    font-weight: 200;
+}
+.bsw-1 {
+    border: 1px solid !important;
+}
+.bc-b {
+    background-color: #2E75E7
+}
+.s-icon {
+    cursor: pointer;
+}
+.d-icon {
+    cursor: not-allowed;
+}

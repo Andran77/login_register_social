@@ -1,0 +1,68 @@
+.container {
+    border: 1px solid #555;
+
+    position: absolute;
+    top: 10%;
+    left: 15%;
+    width: 70%;
+    height: 80%;
+}
+.main-content-fields {
+    text-align: center;
+    top: 20%;
+    position: relative;
+}
+.rigth-side {
+    width: 40%;
+    background: linear-gradient(315deg, #2E75E7 0%, #478EFF 100%);
+}
+.main-content {
+    text-align: center;
+    top: 20%;
+    position: relative;
+}
+h6 {
+    -webkit-margin-top-collapse: discard;
+}
+.main-content-button {
+    text-align: center;
+    top: 20%;
+    position: relative;
+}
+.main-content-fields {
+    text-align: center;
+    top: 20%;
+    position: relative;
+    /* -webkit-margin-top-collapse: discard; */
+}
+.pass-eye {
+    cursor: pointer;
+}
+.social-content {
+    position: relative;
+    top: 30%;
+    text-align: center;
+}
+.image-logo {
+    position: absolute;
+    width: 150px;
+    left: 0;
+    animation: 1.1s infinite beatHeart;
+}
+@keyframes beatHeart {
+    0% {
+      transform: scale(0.9);
+    }
+    25% {
+      transform: scale(1);
+    }
+    40% {
+      transform: scale(0.9);
+    }
+    60% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(0.9);
+    }
+}

@@ -1,0 +1,51 @@
+<mat-drawer-container class="container">
+    <mat-drawer mode="side" opened class="left-side">
+        <div class="main-content">
+            <h1 class="cw">Welcome</h1>
+            <h6 class="cc fw-200">Have an account on use? Log In.</h6>
+        </div>
+        <div class="main-content-button">
+            <button mat-button class="cw bsw-1"  (click)="onLogin()">Sign in</button>
+        </div>
+    </mat-drawer>
+    <mat-drawer-content class="rigth-side">
+        <img class="image-logo"src="assets/image/codeep_1.png" alt="Codeep.io">
+        <div class="main-content">
+            <h1>Create a New Account</h1>
+            <h6 class="fw-200">It’s quick and easy.</h6>
+        </div>
+        <form [formGroup]="signUpForm" class="main-content-fields" (ngSubmit)="onSignUp()">
+            <div class="main-content-fields">
+                <mat-form-field class="fn">
+                    <input matInput placeholder="First Name" formControlName="firstName">
+                </mat-form-field>
+                <mat-form-field class="ln">
+                    <input matInput placeholder="Last Name" formControlName="lastName">
+                </mat-form-field>
+            </div>
+            <div class="main-content-fields">
+                <mat-form-field>
+                    <input [matDatepicker]="picker" matInput placeholder="Birth Date" formControlName="birthDay">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+            </div>
+            <div class="main-content-fields">
+                <mat-form-field>
+                    <input matInput placeholder="Email" formControlName="email">
+                </mat-form-field>
+            </div>
+            <div class="main-content-fields">
+                <mat-form-field>
+                    <input [type]="isTextFieldType ? 'password' : 'text'" matInput placeholder="Password" formControlName="password" #password (input)="valuechange($event)">
+                    <button mat-icon-button matSuffix (click)="changePassType()" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="isTextFieldType">
+                        <mat-icon>{{isTextFieldType ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                </mat-form-field>
+            </div>
+            <div class="main-content-button">
+                <button mat-button class="cw bc-b">Sign up</button>
+            </div>
+        </form>
+    </mat-drawer-content>
+</mat-drawer-container>

@@ -1,0 +1,11 @@
+<mat-spinner *ngIf="loading; else homePage" style="margin:0 auto;" mode="indeterminate"></mat-spinner>
+<ng-template #homePage>
+    <div *ngIf="user.photoUrl">
+        <img src='{{ user.photoUrl }}'>
+    </div>
+    <div>
+        <h4>{{ user.name }}</h4>
+        <p>{{ user.email }}</p>
+    </div>
+    <button mat-button class="cw bc-b" (click)="exitUser()"><mat-icon>exit_to_app</mat-icon>Exit</button>   
+</ng-template>
